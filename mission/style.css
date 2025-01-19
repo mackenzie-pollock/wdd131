@@ -1,3 +1,28 @@
+.dark {
+    background-color: #333;
+    color: white;
+
+}
+.dark h2 {
+    color: rgb(160, 212, 237);
+    
+}
+.dark p, .dark h3, .dark ol {
+    color: #f1f1f1
+
+}
+dark hr, {
+    border-color: #fff;
+}
+.dark .logo {
+    content: url(byui-logo_white.png);
+}
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+
 .content {
     max-width: 1600px;
     margin: 0 auto;
@@ -53,4 +78,7 @@ ol li {
     margin: 20px;
     padding: 20px;
 
+}
+.dark .page-border {
+    border: 1px solid white; /* White border in dark mode */
 }
