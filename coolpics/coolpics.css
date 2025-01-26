@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=family=Mooli&display=swap");
+
+:root {
+  --primary-color: #52489c;
+  --secondary-color: #59c3c3;
+  --accent-color: #f45b69;
+  --text-dark: #333;
+  --text-light: #ebebeb;
+  --primary-font: Arial, Helvetica, sans-serif;
+  --secondary-font: "Mooli", sans-serif;
+}
+
+body {
+  font-family: var(--primary-font);
+  font-size: 1.2em;
+  background-color: #ebebeb;
+  margin: 0;
+  padding: 0;
+}
+
+header, main, footer {
+  max-width: 1000px;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+
+header {
+  background-color: #52489c;
+  display: grid;
+  padding: 1rem;
+}
+
+h1 {
+  color: white;
+  font-size: 3em;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2em;
+  color: white;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1em;
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-size: 2em;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column; /* Default: column layout */
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nav_link {
+  font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+}
+
+.nav_link:hover {
+  text-decoration: underline;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 10px;
+}
+
+section {
+  padding: 20px;
+}
+
+figure {
+  border-color: white;
+  box-shadow: 0 0 5px black;
+  border: 5px solid white;
+  display: inline-block;
+  margin: 10px auto;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: 250px;
+}
+
+footer {
+  background-color: #52489c;
+  display: grid;
+}
+
+/* Small Screens (max-width: 600px) */
+@media only screen and (max-width: 600px) {
+  nav {
+    flex-direction: column; /* Stack links vertically */
+    gap: 0.5rem;
+  }
+  .gallery {
+    grid-template-columns: 1fr; /* Single column for the gallery */
+  }
+}
+
+/* Medium Screens (601px - 999px) */
+@media screen and (min-width: 601px) and (max-width: 999px) {
+  nav {
+    display: none; /* Hide the navigation bar */
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for the gallery */
+  }
+}
+
+/* Large Screens (1000px and up) */
+@media screen and (min-width: 1000px) {
+  nav {
+    display: flex;
+    flex-direction: row; /* Horizontal layout */
+    justify-content: center; /* Center the links */
+    gap: 2rem;
+  }
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for the gallery */
+  }
+}
