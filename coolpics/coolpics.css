@@ -36,11 +36,13 @@ h1 {
   text-align: center;
 }
 
-h2 {
-  font-size: 2em;
-  color: white;
-  text-align: center;
+button {
+background-color: #52489c;
+color: white;
+font-size: 2em;
 }
+
+
 
 h3 {
   font-size: 1em;
