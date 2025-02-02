@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="coolpics.css">
-    <link rel="javascrypt" href="coolpics.js">
+    <script src="coolpics.js" defer></script>
     <title>Cool Pics 📷</title>
 </head>
 <body>
     <header>
         <h1>Cool Pics 📷</h1>
-        <button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
-Menu</button>
+        <button id="menu-button"> Menu</button>
+
         
-        <nav>
+        <nav id="menu" class="hidden">
             <a class="nav_link" href="home">Home</a>              
             <a class="nav_link" href="People">People</a>
             <a class="nav_link" href="places">Places</a>
@@ -23,6 +22,11 @@ Menu</button>
         </nav> 
     </header>
 <main>
+    <div class="viewer">
+        <button class="close-viewer">X</button>
+        <img src="image.jpeg" alt="alt description">
+      </div>
+     
     <p>Current Work</p>
     <section class="gallery">
         <figure>  

@@ -35,11 +35,15 @@ h1 {
   font-size: 3em;
   text-align: center;
 }
+.hidden {
+  display: none;
+}
 
-button {
-background-color: #52489c;
-color: white;
-font-size: 2em;
+#menu-button {
+  color: white;
+  background-color: #52489c;
+  font-size: 1em;
+
 }
 
 
