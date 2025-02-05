@@ -7,6 +7,11 @@ function viewerTemplate(imgSrc, altText) {
   `;
 }
 
+  let imgSrc = "images/norris-full.jpeg"; // Replace with actual path or URL
+  let altText = "full image"; 
+
+  
+
 function viewHandler(event) {
   const clickedImg = event.target;
 
