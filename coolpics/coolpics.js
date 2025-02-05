@@ -1,56 +1,38 @@
-function myFunction() {
-    var x = document.getElementById("myDIV");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
+function viewerTemplate(imgSrc, altText) {
+  return `
+    <div class="viewer">
+      <button class="close-viewer">X</button>
+      <img src="${imgSrc}" alt="${altText}">
+    </div>
+  `;
 }
+
+function viewHandler(event) {
+  const clickedImg = event.target;
+
+  // Ensure the clicked element is an image inside the gallery
+  if (!clickedImg.closest(".gallery img")) return;
+
+  // Prevent multiple modals from opening
+  if (document.querySelector(".viewer")) return;
+
+  // Get the full-size image by modifying the filename
+  const imgParts = clickedImg.src.split("-"); 
+  if (imgParts.length < 2) return; // Prevent errors if filename is unexpected
   
-document.getElementById("menu-button").addEventListener("click", function () {
-    const menu = document.getElementById("menu");
-    menu.classList.toggle("hidden");
-});
-//not finished with picture expansion, but this will add aria to make more accessible
-function viewerTemplate(path, text){
-  <div class="viewer" aria-modal="true" role='dialog'>
-  <button class="close-viewer">X</button>
+  const imgSrc = imgParts[0] + "-full.jpeg"; 
+  const altText = clickedImg.alt;
 
+  // Insert modal viewer at the beginning of body
+  document.body.insertAdjacentHTML("afterbegin", viewerTemplate(imgSrc, altText));
+
+  // Add event listener to close button
+  document.querySelector(".close-viewer").addEventListener("click", closeViewer);
 }
 
-
-
-function handleResize() {
-  const menu = document.getElementById("menu");
-  if(window.innerWidth > 1000) {
-    menu.classList.remove("hidden");
-  } else{
-    menu.classList.add("hidden");
-  }
+function closeViewer() {
+  document.querySelector(".viewer").remove();
 }
-    
-window.addEventListener("resize", handleResize);
-handleResize();
 
-document.getElementById("menu-button").addEventListener("click", function () {
-  const menu = document.getElementById("menu");
-  menu.classList.toggle("hidden");
-  menu.classList.toggle("hidden");
-});
-
-//the following events are for user friendliness and accessibility
-window.addEventListener("click", function (event) {
-  let modal = document.querySelector('.viewer');
-  // close the modal when user clicks outside of the image
-  if (event.target === modal) {
-  modal.remove();
-  }
-  });
-  
-  // allow the escape key to close the modal as well
-  window.addEventListener("keydown", function (event) {
-  let modal = document.querySelector('.viewer');
-  if (event.key === "Escape") {
-  modal.remove();
-  }
-  });
+// Attach event listener to .gallery
+document.querySelector(".gallery").addEventListener("click", viewHandler);
