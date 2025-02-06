@@ -7,8 +7,7 @@ function viewerTemplate(imgSrc, altText) {
   `;
 }
 
-  let imgSrc = "images/norris-full.jpeg"; // Replace with actual path or URL
-  let altText = "full image"; 
+
 
   document.getElementById("menu-button").addEventListener("click", function () {
     const menu = document.getElementById("menu");
