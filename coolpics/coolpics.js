@@ -11,7 +11,7 @@ function viewerTemplate(imgSrc, altText) {
 
   document.getElementById("menu-button").addEventListener("click", function () {
     const menu = document.getElementById("menu");
-    menu.classList.toggle("hidden");  // Toggles visibility
+    menu.classList.toggle("hidden");  
 });
 
 
