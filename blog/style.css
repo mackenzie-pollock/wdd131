@@ -6,7 +6,10 @@
     --font-color-dark: #333;
     --font-color-light: #fff;
     }
-   
+    #maincontent {
+        position: absolute;
+        top: -40px;
+   }
     body{
         margin: 0 auto;
         max-width: 2500px;
@@ -17,6 +20,7 @@
         text-align: center;
         max-width: 100%;
         position: sticky;
+        display: grid;
     }
     h1{
         padding: 20px;
@@ -41,6 +45,10 @@
         text-align: center;
         padding-left: 30%;
         padding-right: 30%;
+        display: grid;
+    }
+    .fable_info{
+        text-align: center;
     }
     .card1{
         border-radius: 30px;
@@ -49,7 +57,9 @@
         max-width: 100%;
         min-width: 350px;
         height: 500px;
+        /* grid-template-columns: repeat(3, 1fr); */
     }
+    
     .card2{
         border-radius: 30px;
         background-color: var(--secondary-color);
@@ -57,14 +67,18 @@
         max-width: 100%;
         min-width: 350px;
         height: 500px;
+        /* grid-template-columns: repeat(3, 1fr); */
     }
+    
     .cards h2{
         padding: 10px;
         
     }
     .cards img {
-        width: 40%;
-
+        width: 30%;
+        /* display: grid; */
+        /* grid-column: 2;
+        grid-row: 1; */
     }
     footer {
         text-align: center;
