@@ -55,8 +55,8 @@
         background-color: var(--secondary-color);
         margin: 0 auto;
         max-width: 100%;
-        min-width: 350px;
-        height: 500px;
+        min-width: 500px;
+        height: 600px;
         /* grid-template-columns: repeat(3, 1fr); */
     }
     
