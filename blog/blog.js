@@ -39,34 +39,59 @@ const articles = [
 	}
 ]
 
-console.log(articles[1].title);
 
-const container=document.querySelector('#blog-articles');
-articles.forEach(function(item){
+const container = document.querySelector('#blog-articles');
+articles.forEach(function(item) {
+    let book = document.createElement('article');
+    book.setAttribute('class', 'book');
+    let html = `
+        <div class="fable">
+            <em><p>${item.date}</p></em>
+            <p>${item.ages}</p>
+            <p>${item.genre}</p>
+            <p>${item.stars}</p>
+        </div>
+        <article class="card1">
+            <h2>${item.title}</h2>
+            <img src="${item.imgSrc}" alt="${item.imgAlt}">
+            <p>${item.description}</p>
+        </article>
+    `;
+    book.innerHTML = html;
+    container.appendChild(book);
+});
+// const mainContainer = document.querySelector('#main-container') || document.querySelector('.main-container');
 
-	
-	let book= document.createElement('article');
-	
-	
-	book.setAttribute('class', 'book');
-	
-	let html = `
-	<div class="fable">
-	<em><p>${item.date}</p></em>
-	<p>${item.ages}</p>
-	<p>${item.genre}</p>
-	<p>${item.stars}</p>
-	</div>
-	
-	<article class="card1">
-	<h2>${item.title}</h2>
-	<img src="${item.imgSrc}" alt="F${item.imgAlt}">
-	<p>${item.description}</p>
-	</article>
-	
-	
-	`
-	book.innerHTML = html;
-	
-	container.appendChild(book);
-})
+// if (mainContainer) {
+// 	await setElementStyles(mainContainer, {
+// 	  'display': 'grid',
+// 	  'grid-template-columns': '1fr 1fr 1fr',
+// 	  'grid-template-rows': '1fr 1fr 1fr',
+// 	  'gap': '20px'
+// 	});
+// 	const data = {
+// 		containerDisplay: window.getComputedStyle(mainContainer)['display'],
+// 		containerGridTemplateColumns: window.getComputedStyle(mainContainer)['grid-template-columns'],
+// 		containerGridTemplateRows: window.getComputedStyle(mainContainer)['grid-template-rows'],
+// 		containerGap: window.getComputedStyle(mainContainer)['gap']
+// 	  };
+// 	console.log('Applied styles:', data);
+// 	} else {
+// 	console.error('Main container not found. Check your selector.');
+// }
+
+
+
+// const container = $0.querySelector('.container');
+// await setElementStyles(container, {
+//   'display': 'grid',
+//   'grid-template-columns': '1fr 1fr 1fr',
+//   'grid-template-rows': '1fr 1fr 1fr',
+//   'gap': '20px',
+// });
+// const data = {
+//   containerDisplay: window.getComputedStyle(container)['display'],
+//   containerGridTemplateColumns: window.getComputedStyle(container)['grid-template-columns'],
+//   containerGridTemplateRows: window.getComputedStyle(container)['grid-template-rows'],
+//   containerGap: window.getComputedStyle(container)['gap'],
+// };
