@@ -1,0 +1,155 @@
+form {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  width: 350px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Card container for overlapping effect */
+.card-container {
+  position: relative;
+  height: 250px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: -20px;
+}
+
+/* Front card (main card) */
+.card-front {
+  background-color: #d3d3d3;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  grid-column: 1;
+  position: relative;
+  display: grid;
+  grid-template-areas:
+    "total card-image"
+    "card-number card-number"
+    "card-holder expiration"
+    "cvc cvc";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 10px;
+  align-items: start;
+}
+
+/* Back card (partial overlap) */
+.card-back {
+  background-color: #e0e0e0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  grid-column: 2;
+  position: relative;
+  left: -20px;
+  top: 20px;
+  height: 150px;
+  display: grid;
+  grid-template-areas:
+    "security-code"
+    "magnetic-stripe";
+  grid-template-rows: 1fr auto;
+  grid-gap: 30px;
+  align-items: center;
+  justify-items: center;
+}
+
+/* Card image styling */
+.card-image {
+  grid-area: card-image;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  margin: 0;
+}
+
+/* Total styling */
+.total {
+  grid-area: total;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+  text-align: left;
+  padding: 5px 0;
+}
+
+/* Input and label styling */
+label {
+  display: block;
+  margin-bottom: 3px;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 6px;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* Card number */
+.card-number {
+  grid-area: card-number;
+}
+
+/* Card holder */
+.card-holder {
+  grid-area: card-holder;
+}
+
+/* Expiration */
+.expiration {
+  grid-area: expiration;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+cvc {
+    grid-area: cvc;
+}
+
+/* Security code */
+.security-code {
+    grid-area: security-code;
+    width: 80%;
+}
+
+/* Magnetic stripe */
+.magnetic-stripe {
+    grid-area: magnetic-stripe;
+    background-color: #333;
+    height: 30px;
+    width: 100%;
+    margin: 0;
+    border-radius: 4px;
+}
+
+/* Submit button */
+button[type="submit"] {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
