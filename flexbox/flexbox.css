@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 20px;
+  max-width: 1280px;
+  margin: auto;
+  padding: 1em;
+}
+
+img {
+  max-width: 100%;
+}
+
+.main-nav {
+  list-style-type: none;
+  display: flex;
+  gap: 1em;
+  justify-content: flex-end;
+}
+
+/* Activity 2 */
+.media-card{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Activity 3 */
+.gallery{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+}
+hr{
+  width: 100%;
+  margin-top: 50px;
+}
+
+.gallery > * { /*the less than symbol means the direct descendant which means its only targeting the children not the entire .gallery class. */
+  flex: 1 1 460px;
+}
+
+@media screen and (min-width: 550px) {
+  .media-card{
+    flex-direction: row;
+    
+  }
+  .media-card-img {
+    flex: 0 1 250px;
+}
+  .media-card__content {
+    flex: 0 1 60ch;
+}
+}
