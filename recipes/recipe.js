@@ -282,22 +282,73 @@ const recipes = [
 
 export default recipes
 
-const container = document.querySelector('#recipe-book');
-articles.forEach(function(item) {
-	let recipe = document.createElement('recipe');
-	recipe.settAttribute('recipe');
-	let html = `
-	<div class="Chicken Curry">
-		<em><p>${item.tags}</p></em>
-		<p>${item.rating}$</p>
-	</div>
-	<article class="image">
-		<img src="${item.image}" alt="${item.imgAlt}">
-	</article>
-`;
-recipe.innerHTML = html;
-containter.appendChild(recipe);
+// const container = document.querySelector('#recipe-book');
+// articles.forEach(function(item) {
+// 	let recipe = document.createElement('recipe');
+// 	recipe.settAttribute('recipe');
+// 	let html = `
+// 	<div class="Chicken Curry">
+// 		<em><p>${item.tags}</p></em>
+// 		<p>${item.rating}$</p>
+// 	</div>
+// 	<article class="image">
+// 		<img src="${item.image}" alt="${item.imgAlt}">
+// 	</article>
+// `;
+// recipe.innerHTML = html;
+// containter.appendChild(recipe);
 
 
 });
 
+function getRandomRecipe(recipeList) {
+    const randomIndex = Math.floor(Math.random() * recipeList.length);
+    const randomObject = recipeList[randomIndex];
+    return randomObject;
+}
+
+function recipeTemplate(recipe) {
+    return `
+        <div class="recipe-image">
+            <img src="${recipe.image}" alt="${recipe.name}">
+        </div>
+        <div class="recipe-content">
+            <button>${tagsTemplate(recipe.tags)}</button>
+            <h2>${recipe.name}</h2>
+            <span class="rating" role="img" aria-label="Rating: ${recipe.rating} out of 5 stars">
+                ${ratingTemplate(recipe.rating)}
+            </span>
+            <p>${recipe.description}</p>
+        </div>
+    `;
+}
+
+function tagsTemplate(tags) {
+    return tags.map((tag) => 
+        `<button>${tag}</button>`).join(' ');
+}
+
+function ratingTemplate(rating) {
+    let html = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= rating) {
+            html += `<span aria-hidden="true" class="icon-star">⭐</span>`;
+        } else {
+            html += `<span aria-hidden="true" class="icon-star">☆</span>`;
+        }
+    }
+    return html;
+}
+
+function renderRecipes(recipeList) {
+    let recipeContainer = document.querySelector('.recipe');
+    let html = recipeTemplate(recipeList);
+    recipeContainer.innerHTML = html;  // Update the container with the new recipe
+}
+
+function init() {
+    const recipe = getRandomRecipe(recipes);
+    renderRecipes(recipe);  // Render the randomly selected recipe
+}
+
+init();
