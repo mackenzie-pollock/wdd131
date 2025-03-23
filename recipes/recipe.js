@@ -299,7 +299,7 @@ export default recipes
 // containter.appendChild(recipe);
 
 
-});
+// });
 
 function getRandomRecipe(recipeList) {
     const randomIndex = Math.floor(Math.random() * recipeList.length);
@@ -350,5 +350,13 @@ function init() {
     const recipe = getRandomRecipe(recipes);
     renderRecipes(recipe);  // Render the randomly selected recipe
 }
-
+function getRandomRecipe(recipeList) {
+    const randomIndex = getRandomInteger(recipeList.length);
+    return recipeList[randomIndex];
+}
 init();
+
+function getRandomInteger(num) {
+	return Math.floor(Math.random() * num);
+  }
+
