@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+header {
+    display: grid;
+    grid-template-columns: 150px auto;
+    background-color: #025159;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav a {
+    background-color: #025159;
+    font-family: "Fira Sans", Montserrat , Helvetica, sans-serif;
+    padding: 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.15em;
+    color: white;
+    margin: auto;
+    width: 75%;
+}
+nav a:hover {
+    background-color: #047c89;
+    color: black;
+    font-family: 'Rubik', 'Geneva', sans-serif;
+}
+.logo {
+    width: 70%;
+}
+
+#portrait-box{
+   width: 90%;
+
+}
+#intro{
+   padding: 10px;
+   font-size: 1.8em;
+   grid-row: 1/1;
+   grid-column: 3/4;
+   font-family: "Fira Sans", Montserrat , Helvetica, sans-serif;
+   color: aliceblue;
+}
+body {
+    background-color: #025159;
+  }
+main {
+    background-color: #025159;
+}
+footer {
+    display: flex;
+    background-color: #025159;
+}
+.social img {
+    width: 80px;
+
+}
