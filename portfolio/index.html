@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mackenzie's Portfolio</title>
-    <link href="styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet" />
     <script src="script.js" defer></script>
-</head>
-<body>
-<header>
-    <a id="logo_link" href="index.html">
-        <img class="logo" src="logo.png" alt="Portfolio Logo">
-    </a>  
-    <nav>
+  </head>
+  <body>
+    <header>
+      <a id="logo_link" href="index.html">
+        <img class="logo" src="images/logo.png" alt="Portfolio Logo" />
+      </a>
+
+      <div class="hamburger" id="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+
+      <nav id="nav-menu" class="nav">
         <a href="index.html">Home</a>
         <a href="#">Projects</a>
-        <a href="#">Contact</a>
-    </nav> 
-</header>
-<div id="portrait">
-    
-    <div id="portrait-box">
-        <img id="portrait-img" src="background.png" alt="Mackenzie's Portrait">
-    </div>
-    <section id="intro">
-     </section>
-</div>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-<main>
-<button>1st  Project</button>
-<button>2nd</button>
-<button>3rd</button>
-<button>4th</button>
-</main>
-<footer>
-    <p>Portfolio - Mackenzie Pollock</p>
-    <p><a href="">Contact</a></p>
-<div class="social">
-    <a href="https://facebook.com" target="_blank">
-        <img src="linkedin.png" alt="linkedin icon">
-    </a>
-    <a href="mailto:pollockmackenzie312@gmail.com">
-        <img src="email.png" alt="Email Mackenzie">
-    </a>
-      
+    <div id="portrait">
+      <div id="portrait-box">
+        <img id="portrait-img" src="images/portrait.jpeg" alt="Mackenzie's Portrait" />
+      </div>
+      <section id="intro">
+        <p id="typewriter-text">
+          Hey, my name is Mackenzie Pollock. I am passionate about living life
+          to the fullest, and learning new things! As I am studying software
+          engineering I have completed a few projects that I have listed here.
+        </p>
+      </section>
+    </div>
+
+    <main>
+      <div class="button-grid-wrapper">
+        <div class="button-grid">
+          <button>One</button>
+          <button>Two</button>
+          <button>Three</button>
+          <button>Four</button>
+          <a class="#" href="#"></a>
+        </div>
+      </div>
+    </main>
     
-</div>
-</footer>
-</body>
+    <footer>
+      <p>Portfolio - Mackenzie Pollock</p>
+      <p><a href="contact.html">Contact</a></p>
+
+      <div class="social">
+        <a href="https://facebook.com" target="_blank">
+          <img src="images/linkedin.png" alt="linkedin icon" />
+        </a>
+        <a href="mailto:pollockmackenzie312@gmail.com">
+          <img src="images/linkedin.png" alt="Email Mackenzie" />
+        </a>
+      </div>
+    </footer>
+  </body>
 </html>

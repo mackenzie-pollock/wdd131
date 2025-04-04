@@ -1,15 +1,43 @@
-const text = "Hey, my name is Mackenzie Pollock. I am passionate about living life to the fullest, and learning new things! As I am studying software engineering I have completed a few projects that I have listed here on my portfolio.";
-const speed = 100;
-let index = 0;
+function typeWriterEffect() {
+    const textElement = document.getElementById('typewriter-text');
+    const fullText = textElement.textContent;
+    textElement.textContent = '';
+    let index = 0;
 
-function typeWriter() {
-  const target = document.getElementById("typewriter");
-  if (index < text.length) {
-    target.innerHTML += text.charAt(index);
-    index++;
-    setTimeout(typeWriter, speed);
-  }
+    function type() {
+        if (index < fullText.length) {
+            textElement.textContent += fullText.charAt(index);
+            index++;
+            setTimeout(type, 35); // typing speed (ms)
+        }
+    }
+
+    type();
 }
 
-// Wait for the DOM to load before starting
-window.addEventListener("DOMContentLoaded", typeWriter);
+window.addEventListener('load', () => {
+    if (window.innerWidth > 768) {
+        // Desktop: start on load
+        typeWriterEffect();
+    } else {
+        // Mobile: animate when #intro is in view
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                typeWriterEffect();
+                observer.disconnect(); // only run once
+            }
+        }, {
+            threshold: 0.5
+        });
+
+        observer.observe(document.getElementById('intro'));
+    }
+});
+
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+
