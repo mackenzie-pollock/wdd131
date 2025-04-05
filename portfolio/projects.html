@@ -1,11 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projects</title>
-</head>
-<body>
-    
-</body>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+  </head>
+  <header>
+    <a id="logo_link" href="index.html">
+      <img class="logo" src="images/logo.png" alt="Portfolio Logo" />
+    </a>
+
+    <div class="hamburger" id="hamburger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <nav id="nav-menu" class="nav">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <body>
+    <main>
+      <section id="projects" class="projects-section">
+        <div style="text-align: center">
+          <h2 class="section-title">My Projects</h2>
+        </div>
+
+        <div class="project-grid">
+          <div class="project-card hover-reveal">
+            <img
+              src="images/chrsitmas_tree copy.webp"
+              alt="Screenshot of Project"
+            />
+            <div class="project-info">
+              <h3>Christmas List</h3>
+              <p>
+                For Christmas 2024 I made this site for my family to make it
+                easier for them to know what to get me. I spent a total of 2 hrs
+                on this project using only HTML and CSS.
+              </p>
+              <button
+                onclick="openProjectModal('https://mackenzie-pollock.github.io/mackenzies_christmas_list/')"
+              >
+                View Project
+              </button>
+            </div>
+          </div>
+
+          <div class="project-card hover-reveal">
+            <img
+              src="images/byui-logo_blue copy.webp"
+              alt="Screenshot of Project"
+            />
+            <div class="project-info">
+              <h3>Mission Statement</h3>
+              <p>
+                This project is not affiliated with or endorsed by Brigham Young
+                University–Idaho. The use of the BYU–Idaho logo was granted with
+                permission solely for educational purposes as part of a class
+                project. For my Web Design 131 class I was given permission to
+                use the BYU–Idaho logo for practice with JS!
+              </p>
+              <button onclick="openProjectModal('https://mackenzie-pollock.github.io/wdd131/mission/index.html')">View Project</button>
+            </div>
+          </div>
+
+          <div class="project-card hover-reveal">
+            <img src="images/wwr.png" alt="Screenshot of wwr" />
+            <div class="project-info">
+              <h3>1st Personal Site</h3>
+              <p>
+                This was my first site I made in January of 2024, it links to
+                all of my projects in my first Web Design and Development class.
+              </p>
+              <button
+                onclick="openProjectModal('https://mackenzie-pollock.github.io/wdd130/')"
+              >
+                View Project
+              </button>
+            </div>
+          </div>
+
+          <div class="project-card hover-reveal">
+            <img src="images/bbb.png" alt="Screenshot of wwr" />
+            <div class="project-info">
+              <h3>Technical Teamwork Project</h3>
+              <p>
+                Fall of 2024 I was in a Technical Teamwork class that explored
+                the dating scene in Rexburg, Idaho and set out to make an
+                informative site to help traverse this scene.
+              </p>
+              <button
+                onclick="openProjectModal('https://omora14.github.io/boosted-boop-bops/dating-guide.html')"
+              >
+                View Project
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Portfolio - Mackenzie Pollock</p>
+      <p><a href="contact.html">Contact</a></p>
+
+      <div class="social">
+        <a href="https://facebook.com" target="_blank">
+          <img src="images/linkedin.png" alt="linkedin icon" />
+        </a>
+        <a href="mailto:pollockmackenzie312@gmail.com">
+          <img src="images/email.png" alt="Email Mackenzie" />
+        </a>
+        <a href="https://github.com/">
+            <img src="images/githublogo.png" alt="Mackenzie Github" />
+          </a>
+      </div>
+    </footer>
+
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close-button">&times;</span>
+        <iframe id="projectFrame" src="" frameborder="0"></iframe>
+      </div>
+    </div>
+  </body>
 </html>

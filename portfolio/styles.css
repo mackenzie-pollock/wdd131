@@ -61,9 +61,10 @@ nav a {
 nav a:hover {
   background-color: #047c89;
   color: black;
-  font-family: "Rubik", "Geneva", sans-serif;
+  font-family: "Special Elite", Montserrat, Helvetica, sans-serif;
 }
 
+/* Home page*/
 #portrait {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -129,6 +130,165 @@ button:hover {
   background: url("images/button.png");
 }
 
+/* projects page*/
+
+.section-title {
+  display: inline-block;
+  padding: 15px 30px;
+  border: 3px solid #03a696;
+  border-radius: 12px;
+  font-family: "Special Elite", Montserrat, Helvetica, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 40px auto;
+  color: white;
+  background-color: #03a696;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  height: 80%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  color: #025159;
+  cursor: pointer;
+  z-index: 10;
+}
+/*hover zoom cards*/
+.hover-reveal {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hover-reveal img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.hover-reveal:hover {
+  transform: scale(1.03);
+}
+
+.project-info {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(2, 81, 89, 0.95);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  overflow: hidden;
+  color: white;
+  font-family: "Special Elite", Montserrat, Helvetica, sans-serif;
+}
+
+.project-info h3 {
+  margin-bottom: 10px;
+}
+
+.project-info p {
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+
+.hover-reveal:hover .project-info {
+  opacity: 1;
+}
+
+/* more css for hover cards to align them in rows and columns*/
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.project-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  min-height: 350px;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* contact page*/
+
+.background-overlap {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #025159; 
+}
+
+.bg-img {
+  position: absolute;
+  width: 70vmin;
+  height: auto;
+  z-index: 1;
+  opacity: 0.95;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+  transform: translate(-30%, -30%);
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: translate(30%, 30%);
+}
 
 footer {
   display: flex;
@@ -176,7 +336,7 @@ footer a {
     border-color: white;
   }
 }
-
+/* responsiveness */
 @media (max-width: 768px) {
   #portrait {
     grid-template-columns: 1fr;
@@ -220,7 +380,7 @@ footer a {
     width: 100%;
     flex-direction: column;
     align-items: center;
-    display: none; /* hidden by default */
+    display: none;
   }
 
   nav a {
@@ -232,5 +392,10 @@ footer a {
 
   nav.show {
     display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
   }
 }

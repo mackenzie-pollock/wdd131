@@ -41,3 +41,29 @@ hamburger.addEventListener('click', () => {
   navMenu.classList.toggle('show');
 });
 
+/* projects page*/
+
+
+const modal = document.getElementById('projectModal');
+const closeModal = document.getElementById('closeModal');
+const projectFrame = document.getElementById('projectFrame');
+
+
+function openProjectModal(projectURL) {
+  projectFrame.src = projectURL;
+  modal.style.display = 'flex';
+}
+
+
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+  projectFrame.src = ''; 
+});
+
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+    projectFrame.src = '';
+  }
+});
