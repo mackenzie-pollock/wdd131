@@ -25,12 +25,22 @@
     </nav>
   </header>
 <body>
+    <h1 id="type-contact">Let's Connect!</h1>
+    
 
-    <section class="background-overlap">
-        <img src="images/2062BA81-EF43-46CF-9D82-4D3CAB8897A2_1_105_c_LE_upscale_balanced_x4.jpg" class="bg-img top-left">
-        <img src="images/right-corner.jpg" class="bg-img bottom-right">
-      </section>
+    
+    <section class="contact-card-section">
+        <div class="card-grid">
+            <div class="card resume-card" onclick="openProjectModal('images/mackenzie_pollock_resume .pdf')">Resume</div>
+            <a href="mailto:pollockmackenzie312@gmail.com" class="card contact-card">Email</a>
+            <a href="https://www.linkedin.com/in/mackenzie-pollock-b70b6129b?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B5en8Od6vRtWkZo8NTyxyjA%3D%3Dk" target="_blank" class="card contact-card">LinkedIn</a>
+            <a href="tel:+9282960401" class="card contact-card">Call</a>
+        </div>
+    </section>
+    <div class="burst-blocks"></div>
       
+
+
     <footer>
         <p>Portfolio - Mackenzie Pollock</p>
         <p><a href="contact.html">Contact</a></p>
@@ -47,5 +57,13 @@
           </a>
         </div>
     </footer>
+ 
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close-button">&times;</span>
+      <iframe id="projectFrame" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+  
 </body>
 </html>

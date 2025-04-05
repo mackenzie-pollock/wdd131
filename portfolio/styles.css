@@ -261,34 +261,102 @@ button:hover {
 }
 
 /* contact page*/
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;     /* remove underline */
+    background-color: white;
+    color: #025159;
+    padding: 40px 30px;
+    border-radius: 12px;
+    font-family: "Special Elite", Montserrat, Helvetica, sans-serif;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 1.25rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    background-color: #f0f0f0;
+    color: #025159;
+  }
+  
+.contact-card-section {
+    background-color: #025159;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 30px;
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  
+  
+  /* Layout resume card at the top center */
+  .resume-card {
+    grid-column: 2;
+  }
+  .modal-content {
+    width: 90%;
+    max-width: 1000px;
+    height: 90vh;
+  }
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #f28705;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+  }
+    
+h1 {
+    color: white;
+    font-family: "Special Elite", Montserrat, Helvetica, sans-serif;
+    text-align: center;
+}  
 
-.background-overlap {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #025159; 
-}
-
-.bg-img {
-  position: absolute;
-  width: 70vmin;
-  height: auto;
-  z-index: 1;
-  opacity: 0.95;
-}
-
-.top-left {
-  top: 0;
-  left: 0;
-  transform: translate(-30%, -30%);
-}
-
-.bottom-right {
-  bottom: 0;
-  right: 0;
-  transform: translate(30%, 30%);
-}
+/* cool block things */
+.burst-blocks {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 1;
+  }
+  
+  .burst-block {
+    width: 50px;
+    height: 50px;
+    background-color: #f28705;
+    border-radius: 8px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    cursor: pointer;
+  }
+  
+  .burst-block.clicked {
+    transform: scale(2) rotate(360deg) translateY(-100px);
+    opacity: 0;
+  }
+  
 
 footer {
   display: flex;
@@ -394,8 +462,21 @@ footer a {
     display: flex;
   }
 }
+/* projects page stuff*/
 @media (max-width: 768px) {
   .project-grid {
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+    }
+  
+    .resume-card {
+      grid-column: auto;
+    }
+  }
+  
+  
