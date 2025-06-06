@@ -107,10 +107,10 @@ typeText();
 
 
 
-const burstColors = ["#f28705", "#03a696", "#f25c54", "#ffcb05", "#a0e426"];
+const burstColors = ["rgb(242 127 36)", "rgb(195 59 18)", "rgb(12 49 54)", "rgb(65 136 35)", "rgb(51 111 59)"];
 const burstContainer = document.querySelector('.burst-blocks');
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 18; i++) {
   const block = document.createElement('div');
   block.classList.add('burst-block');
   block.style.backgroundColor = burstColors[Math.floor(Math.random() * burstColors.length)];
